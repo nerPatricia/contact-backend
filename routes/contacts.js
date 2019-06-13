@@ -3,7 +3,7 @@ var db = require("../database.js");
 var router = express.Router();
 
 router.get("/get-person", function(req, res, next) {
-  res.send({ person: db.contacts.listUser() });
+  res.send({ person: db.contacts.listPerson() });
 });
 
 router.get("/get-company", function(req, res, next) {
@@ -15,7 +15,7 @@ router.get("/get-allcontacts", function(req, res, next) {
 });
 
 router.post("/register-person", function(req, res, next) {
-  res.send({ data: db.contacts.addUser(req.body.person) });
+  res.send({ data: db.contacts.addPerson(req.body.person) });
 });
 
 router.post("/register-company", function(req, res, next) {
@@ -26,7 +26,7 @@ router.post("/register-company", function(req, res, next) {
 
 router.put("/:item", function(req, res, next) {
   res.send({
-    data: db.contacts.setUser(
+    data: db.contacts.setPerson(
       req.params.item,
       req.body.title,
       req.body.completed
@@ -45,7 +45,7 @@ router.put("/:item", function(req, res, next) {
 });
 
 router.delete("/:item", function(req, res, next) {
-  res.send({ data: db.contacts.deleteUser(req.params.item) });
+  res.send({ data: db.contacts.deletePerson(req.params.item) });
 });
 
 router.delete("/:item", function(req, res, next) {

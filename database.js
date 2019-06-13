@@ -1,37 +1,3 @@
-// const data = {
-//   person: [
-//     {
-//       name,
-//       birthday,
-//       cpf,
-//       address: [
-//         {
-//           street,
-//           number,
-//           complement,
-//           zipcode,
-//           district,
-//           city,
-//           state
-//         }
-//       ],
-//       email,
-//       phone
-//     }
-//   ],
-//   company: [
-//     {
-//       fantasyName,
-//       companyName,
-//       openDate,
-//       cnpj,
-//       address: [{ street, number, complement, zipcode, district, city, state }],
-//       email,
-//       phone
-//     }
-//   ]
-// };
-
 const data = {
   person: [],
   company: []
@@ -40,13 +6,23 @@ const data = {
 module.exports = {
   contacts: {
     //lista só informações de pessoas fisicas
-    listUser: () => {
+    listPerson: () => {
+      return data.person;
+    },
+
+    //TO DO
+    listPersonById: () => {
       return data.person;
     },
 
     //lista informações de pessoas juridicas
     listCompany: () => {
       return data.company;
+    },
+
+    //TO DO
+    listCompanyById: () => {
+      return data.person;
     },
 
     //junta informações de pessoas fisicas e juridicas
@@ -62,17 +38,19 @@ module.exports = {
     },
 
     //adiciona pessoa fisica
-    addUser: person => {
+    addPerson: person => {
+      person.id = data.person.length + 1;
       data.person.push(person);
     },
 
     //adiciona pessoa juridica
     addCompany: company => {
+      company.id = data.company.length + 1;
       data.company.push(company);
     },
 
     //TO DO
-    setUser: (index, person) => {
+    setPerson: (index, person) => {
       data.person[index].name = person.name;
       data.person[index].birthday = person.birthday;
       data.person[index].cpf = person.cpf;
@@ -105,7 +83,7 @@ module.exports = {
     },
 
     //TO DO
-    deleteUser: index => {
+    deletePerson: index => {
       data.person.splice(index, 1);
     },
 
