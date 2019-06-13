@@ -28,19 +28,9 @@ module.exports = {
       return data.person;
     },
 
-    //TO DO
-    listPersonById: () => {
-      return data.person;
-    },
-
     //lista informações de pessoas juridicas
     listCompany: () => {
       return data.company;
-    },
-
-    //TO DO
-    listCompanyById: () => {
-      return data.person;
     },
 
     //junta informações de pessoas fisicas e juridicas
@@ -67,37 +57,14 @@ module.exports = {
       data.company.push(company);
     },
 
-    //TO DO
+    //atualiza os dados de pessoa fisica
     setPerson: (index, person) => {
-      data.person[index].name = person.name;
-      data.person[index].birthday = person.birthday;
-      data.person[index].cpf = person.cpf;
-      data.person[index].address.street = person.address.street;
-      data.person[index].address.number = person.address.number;
-      data.person[index].address.complement = person.address.complement;
-      data.person[index].address.zipcode = person.address.zipcode;
-      data.person[index].address.district = person.address.district;
-      data.person[index].address.city = person.address.city;
-      data.person[index].address.state = person.address.state;
-      data.person[index].email = person.email;
-      data.person[index].phone = person.phone;
+      data.person[index] = person;
     },
 
-    //TO DO
+    //atualiza os dados de pessoa juridica
     setCompany: (index, company) => {
-      data.company[index].name = company.name;
-      data.company[index].socialname = company.socialname;
-      data.company[index].birthday = company.birthday;
-      data.company[index].cnpj = company.cnpj;
-      data.company[index].address.street = company.address.street;
-      data.company[index].address.number = company.address.number;
-      data.company[index].address.complement = company.address.complement;
-      data.company[index].address.zipcode = company.address.zipcode;
-      data.company[index].address.district = company.address.district;
-      data.company[index].address.city = company.address.city;
-      data.company[index].address.state = company.address.state;
-      data.company[index].email = company.email;
-      data.company[index].phone = company.phone;
+      data.company[index] = company;
     },
 
     //TO DO
