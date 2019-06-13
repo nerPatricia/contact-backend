@@ -10,6 +10,10 @@ router.get("/get-company", function(req, res, next) {
   res.send({ company: db.contacts.listCompany() });
 });
 
+router.get("/get-allcontacts", function(req, res, next) {
+  res.send({ allcontacts: db.contacts.listAllContacts() });
+});
+
 router.post("/register-person", function(req, res, next) {
   res.send({ data: db.contacts.addUser(req.body.person) });
 });

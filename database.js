@@ -39,18 +39,34 @@ const data = {
 
 module.exports = {
   contacts: {
+    //lista só informações de pessoas fisicas
     listUser: () => {
       return data.person;
     },
 
+    //lista informações de pessoas juridicas
     listCompany: () => {
       return data.company;
     },
 
+    //junta informações de pessoas fisicas e juridicas
+    //e apresenta em ordem alfabética
+    listAllContacts: () => {
+      var allContacts = {};
+      allContacts = data.person.concat(data.company);
+      return allContacts.sort(function(a, b) {
+        if (a.name > b.name) {
+          return 1;
+        }
+      });
+    },
+
+    //adiciona pessoa fisica
     addUser: person => {
       data.person.push(person);
     },
 
+    //adiciona pessoa juridica
     addCompany: company => {
       data.company.push(company);
     },
