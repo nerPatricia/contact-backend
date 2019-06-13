@@ -7,7 +7,7 @@ router.get("/get-person", function(req, res, next) {
 });
 
 router.get("/get-company", function(req, res, next) {
-  res.send({ data: db.contacts.listCompany() });
+  res.send({ company: db.contacts.listCompany() });
 });
 
 router.post("/register-person", function(req, res, next) {
@@ -16,7 +16,7 @@ router.post("/register-person", function(req, res, next) {
 
 router.post("/register-company", function(req, res, next) {
   res.send({
-    data: db.contacts.addCompany(req.body.title, req.body.completed)
+    data: db.contacts.addCompany(req.body.company)
   });
 });
 

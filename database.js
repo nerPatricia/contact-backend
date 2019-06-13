@@ -52,9 +52,10 @@ module.exports = {
     },
 
     addCompany: company => {
-      data.company.push({ company });
+      data.company.push(company);
     },
 
+    //TO DO
     setUser: (index, person) => {
       data.person[index].name = person.name;
       data.person[index].birthday = person.birthday;
@@ -70,6 +71,7 @@ module.exports = {
       data.person[index].phone = person.phone;
     },
 
+    //TO DO
     setCompany: (index, company) => {
       data.company[index].fantasyName = company.fantasyName;
       data.company[index].companyName = company.companyName;
@@ -86,10 +88,12 @@ module.exports = {
       data.company[index].phone = company.phone;
     },
 
+    //TO DO
     deleteUser: index => {
       data.person.splice(index, 1);
     },
 
+    //TO DO
     deleteCompany: index => {
       data.company.splice(index, 1);
     }
