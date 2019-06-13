@@ -1,3 +1,21 @@
+// const data = {
+//   person: [],
+//   company: [
+//     name,
+//     birthday,
+//     cpf,
+//     street,
+//     number,
+//     complement,
+//     zipcode,
+//     district,
+//     city,
+//     state,
+//     email,
+//     phone
+//   ]
+// };
+
 const data = {
   person: [],
   company: []
@@ -39,13 +57,13 @@ module.exports = {
 
     //adiciona pessoa fisica
     addPerson: person => {
-      person.id = data.person.length + 1;
+      person.id = data.person.length;
       data.person.push(person);
     },
 
     //adiciona pessoa juridica
     addCompany: company => {
-      company.id = data.company.length + 1;
+      company.id = data.company.length;
       data.company.push(company);
     },
 
@@ -67,9 +85,9 @@ module.exports = {
 
     //TO DO
     setCompany: (index, company) => {
-      data.company[index].fantasyName = company.fantasyName;
-      data.company[index].companyName = company.companyName;
-      data.company[index].openDate = company.openDate;
+      data.company[index].name = company.name;
+      data.company[index].socialname = company.socialname;
+      data.company[index].birthday = company.birthday;
       data.company[index].cnpj = company.cnpj;
       data.company[index].address.street = company.address.street;
       data.company[index].address.number = company.address.number;

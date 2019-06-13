@@ -24,17 +24,13 @@ router.post("/register-company", function(req, res, next) {
   });
 });
 
-router.put("/:item", function(req, res, next) {
+router.put("/update-person/:id", function(req, res, next) {
   res.send({
-    data: db.contacts.setPerson(
-      req.params.item,
-      req.body.title,
-      req.body.completed
-    )
+    data: db.contacts.setPerson(req.params.id, req.body.person)
   });
 });
 
-router.put("/:item", function(req, res, next) {
+router.put("/:id", function(req, res, next) {
   res.send({
     data: db.contacts.setCompany(
       req.params.item,
@@ -44,11 +40,11 @@ router.put("/:item", function(req, res, next) {
   });
 });
 
-router.delete("/:item", function(req, res, next) {
+router.delete("/:contact", function(req, res, next) {
   res.send({ data: db.contacts.deletePerson(req.params.item) });
 });
 
-router.delete("/:item", function(req, res, next) {
+router.delete("/:contact", function(req, res, next) {
   res.send({ data: db.contacts.deleteCompany(req.params.item) });
 });
 
