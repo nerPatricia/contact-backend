@@ -41,12 +41,10 @@ module.exports = {
       data.company[id] = company;
     },
 
-    //TO DO
     deletePerson: id => {
       data.person.splice(id, 1);
     },
 
-    //TO DO
     deleteCompany: id => {
       data.company.splice(id, 1);
     }
