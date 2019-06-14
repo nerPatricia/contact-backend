@@ -1,21 +1,3 @@
-// const data = {
-//   person: [],
-//   company: [
-//     name,
-//     birthday,
-//     cpf,
-//     street,
-//     number,
-//     complement,
-//     zipcode,
-//     district,
-//     city,
-//     state,
-//     email,
-//     phone
-//   ]
-// };
-
 const data = {
   person: [],
   company: []
@@ -23,18 +5,14 @@ const data = {
 
 module.exports = {
   contacts: {
-    //lista só informações de pessoas fisicas
     listPerson: () => {
       return data.person;
     },
 
-    //lista informações de pessoas juridicas
     listCompany: () => {
       return data.company;
     },
 
-    //junta informações de pessoas fisicas e juridicas
-    //e apresenta em ordem alfabética
     listAllContacts: () => {
       var allContacts = {};
       allContacts = data.person.concat(data.company);
@@ -45,36 +23,32 @@ module.exports = {
       });
     },
 
-    //adiciona pessoa fisica
     addPerson: person => {
       person.id = data.person.length;
       data.person.push(person);
     },
 
-    //adiciona pessoa juridica
     addCompany: company => {
       company.id = data.company.length;
       data.company.push(company);
     },
 
-    //atualiza os dados de pessoa fisica
-    setPerson: (index, person) => {
-      data.person[index] = person;
+    setPerson: (id, person) => {
+      data.person[id] = person;
     },
 
-    //atualiza os dados de pessoa juridica
-    setCompany: (index, company) => {
-      data.company[index] = company;
-    },
-
-    //TO DO
-    deletePerson: index => {
-      data.person.splice(index, 1);
+    setCompany: (id, company) => {
+      data.company[id] = company;
     },
 
     //TO DO
-    deleteCompany: index => {
-      data.company.splice(index, 1);
+    deletePerson: id => {
+      data.person.splice(id, 1);
+    },
+
+    //TO DO
+    deleteCompany: id => {
+      data.company.splice(id, 1);
     }
   }
 };
