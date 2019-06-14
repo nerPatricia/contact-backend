@@ -5,28 +5,14 @@ const data = {
 
 module.exports = {
   contacts: {
-    //lista só informações de pessoas fisicas
     listPerson: () => {
       return data.person;
     },
 
-    //TO DO
-    listPersonById: () => {
-      return data.person;
-    },
-
-    //lista informações de pessoas juridicas
     listCompany: () => {
       return data.company;
     },
 
-    //TO DO
-    listCompanyById: () => {
-      return data.person;
-    },
-
-    //junta informações de pessoas fisicas e juridicas
-    //e apresenta em ordem alfabética
     listAllContacts: () => {
       var allContacts = {};
       allContacts = data.person.concat(data.company);
@@ -37,59 +23,30 @@ module.exports = {
       });
     },
 
-    //adiciona pessoa fisica
     addPerson: person => {
-      person.id = data.person.length + 1;
+      person.id = data.person.length;
       data.person.push(person);
     },
 
-    //adiciona pessoa juridica
     addCompany: company => {
-      company.id = data.company.length + 1;
+      company.id = data.company.length;
       data.company.push(company);
     },
 
-    //TO DO
-    setPerson: (index, person) => {
-      data.person[index].name = person.name;
-      data.person[index].birthday = person.birthday;
-      data.person[index].cpf = person.cpf;
-      data.person[index].address.street = person.address.street;
-      data.person[index].address.number = person.address.number;
-      data.person[index].address.complement = person.address.complement;
-      data.person[index].address.zipcode = person.address.zipcode;
-      data.person[index].address.district = person.address.district;
-      data.person[index].address.city = person.address.city;
-      data.person[index].address.state = person.address.state;
-      data.person[index].email = person.email;
-      data.person[index].phone = person.phone;
+    setPerson: (id, person) => {
+      data.person[id] = person;
     },
 
-    //TO DO
-    setCompany: (index, company) => {
-      data.company[index].fantasyName = company.fantasyName;
-      data.company[index].companyName = company.companyName;
-      data.company[index].openDate = company.openDate;
-      data.company[index].cnpj = company.cnpj;
-      data.company[index].address.street = company.address.street;
-      data.company[index].address.number = company.address.number;
-      data.company[index].address.complement = company.address.complement;
-      data.company[index].address.zipcode = company.address.zipcode;
-      data.company[index].address.district = company.address.district;
-      data.company[index].address.city = company.address.city;
-      data.company[index].address.state = company.address.state;
-      data.company[index].email = company.email;
-      data.company[index].phone = company.phone;
+    setCompany: (id, company) => {
+      data.company[id] = company;
     },
 
-    //TO DO
-    deletePerson: index => {
-      data.person.splice(index, 1);
+    deletePerson: id => {
+      data.person.splice(id, 1);
     },
 
-    //TO DO
-    deleteCompany: index => {
-      data.company.splice(index, 1);
+    deleteCompany: id => {
+      data.company.splice(id, 1);
     }
   }
 };
